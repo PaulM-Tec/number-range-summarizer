@@ -133,4 +133,19 @@ public class NumberRangeSummarizerImplTest {
         assertEquals("1,3,5,7", result);
     }
 
+    @Test
+    void shouldSummarizeRangeAtEnd() {
+
+        NumberRangeSummarizer summarizer =
+                new NumberRangeSummarizerImpl();
+
+        Collection<Integer> numbers =
+                summarizer.collect("1,2,3");
+
+        String result =
+                summarizer.summarizeCollection(numbers);
+
+        assertEquals("1-3", result);
+    }
+
 }
